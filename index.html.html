@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>My Stopwatch Project</title>
+    <link rel="stylesheet" href="mycssfile3.css">
+</head>
+<body>
+    <div class="one">
+
+        <h1>My StopWatch <sup>@MJAY.SQI|2022</sup></h1>
+        <div class="two container" >
+
+        
+    Hour: <br><input type="number" id="hour" placeholder="0"> <br>
+    Minutes: <br><input type="number" id="minutes" placeholder="0"> <br>
+    Seconds: <br><input type="number" id="seconds" placeholder="0">
+
+    <br><br>
+
+    <button class="button2" id="start" onclick="stopWatch(start)">Start</button>
+    <button id="stop" class="button2" onclick="stopIt()">Stop</button>
+    <button  class="button2" onclick= "reset()"> Reset</button>
+    <script>
+
+    
+        //var startTime = document.getElementById("start");
+       
+        
+
+        function timer(id) {
+            if (hour.value == "" && minutes.value == "" && seconds.value == "") {
+                 alert("Pls input a valid number")
+            }else 
+            if (seconds.value != 0) {
+                seconds.value--;
+            } else if (minutes.value!=0 && seconds.value == 0) {
+                seconds.value = 60; 
+                minutes.value--;
+            
+            } else if (hour.value!=0 && minutes.value == 0 && seconds.value == 0) {
+                seconds.value = 60;
+                minutes.value = 60;
+                hour.value--;
+            }
+        }
+
+        function stopWatch (id) {
+            if (id = "start") {
+                const startTimer =  setInterval(function () {
+                    timer();
+                }, 1000);
+
+            }
+           
+        }
+
+        function stopIt() {
+            var x = seconds.value;
+            var y = minutes.value;
+            var z = hour.value;
+
+            if (seconds.value > 0) {
+                hour.value = z;
+                minutes.value = y;
+                seconds. value = x;
+            }
+            
+        }
+
+            function reset () {
+
+                if (seconds.value > 0) {
+                    seconds.value = 0;
+                }
+                if (hour.value > 0) {
+                    hour.value = 0;
+                }
+                if (minutes.value > 0) {
+                    minutes.value = 0;
+                }
+
+                
+            }
+        
+        
+        //  function startIt (){
+        //     // function startInterval() {
+        //     //     alert('yes');
+               
+        //     //}
+        //     start.disable = false;
+        //     //startInterval();
+        // }
+        
+
+        //  function stopTime () { 
+
+           
+        // }
+        // function resetTime () {
+    
+        // }
+        
+    </script>
+    </div>
+</div>
+
+</body>
+</html>
